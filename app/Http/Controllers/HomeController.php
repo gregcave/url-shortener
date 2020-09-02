@@ -17,13 +17,14 @@ class HomeController extends Controller
 	{
 		$usersCount = User::count();
 		$linksCount = Url::count();
-		$clicksCount = Url::sum('used');
+		$visitsCount = Url::sum('visits');
 		
 		return \View::make('twig.home', [
 			'title' => 'Home',
+			'banner' => true,
 			'users_count' => $usersCount,
 			'links_count' => $linksCount,
-			'clicks_count' => $clicksCount,
+			'visits_count' => $visitsCount,
 		]);
 	}
 }

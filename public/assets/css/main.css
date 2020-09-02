@@ -3439,7 +3439,6 @@ div[class*="col"]:nth-of-type(3n + 3) .publisher-item .publisher-inner {
 
 .payout-rates li {
     justify-content: space-between;
-    text-transform: capitalize;
     font-size: 22px;
     color: #414785;
     padding: 24px 40px;

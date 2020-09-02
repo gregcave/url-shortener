@@ -1,32 +1,61 @@
 {% extends 'html/layouts/master.twig' %}
 	
-{% block header %}
-	
-    <!--============= Page Header Section Starts Here =============-->
-	
-    <section class="page-header">
-        <div class="banner-bg bg_img" data-background="/assets/images/banner/banner-bg.jpg">
-            <div class="banner-bg-shape"><img src="/assets/images/banner/banner-shape.png" alt="banner"></div>
-            <div class="round-1">
-                <img src="/assets/images/banner/01.png" alt="banner">
-            </div>
-            <div class="round-2">
-                <img src="/assets/images/banner/02.png" alt="banner">
-            </div>
-        </div>
+{% block content %}
+						
+    <section class="payout-section padding-top padding-bottom">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="title">{{ title }}</h1>
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <div class="section-header mw-100">
+                        <h5 class="cate">YOUR LINKS</h5>
+                        <h2 class="title">Visits Overview</h2>
+                        <p>We provide you with an overview of every visit made with each of the urls that you've shortened.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="payout-wrapper">
+                <div class="payout-area">
+                    <ul class="payout-header">
+                        <li>
+							<p>Hyperlink</p>
+                        </li>
+                        <li>
+                            <div class="thumb">
+                                <img src="/assets/images/payout/icon1.png" alt="payout">
+                            </div>
+                            <div class="content">
+                                <h5 class="subtitle">Links</h5>
+                                <p>Total of {{ linksCount }} links</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb">
+                                <img src="/assets/images/payout/icon2.png" alt="payout">
+                            </div>
+                            <div class="content">
+                                <h5 class="subtitle">Visits</h5>
+                                <p>Total of {{ visitsCount }} visits</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="payout-rates">
+										
+						{% for url in urls %}
+					
+                        <li>
+                            <div class="payout-contry">
+                                <div class="content">{{ url.url }}</div>
+                            </div>
+                            <div class="dextop-amount">{{ url.link }}</div>
+                            <div class="mobile-amount">{{ url.visits }}</div>
+                        </li>
+                        
+						{% endfor %}
+						
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 	
-    <!--============= Page Header Section Ends Here =============-->
-
-{% endblock %}
-	
-{% block content %}
-					
-	<!-- Content -->
-
 {% endblock %}

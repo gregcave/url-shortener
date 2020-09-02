@@ -21,8 +21,6 @@
 </head>
 
 <body>
-
-    <!--============= ScrollToTop Section Starts Here =============-->
 	
     <div class="overlayer" id="overlayer">
         <div class="loader">
@@ -31,11 +29,7 @@
     </div>
     <a href="#0" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
     <div class="overlay"></div>
-	
-    <!--============= ScrollToTop Section Ends Here =============-->
-
-    <!--============= Header Section Starts Here =============-->
-	
+		
     <header class="header-section">
         <div class="container">
             <div class="header-wrapper">
@@ -43,15 +37,32 @@
                     <li>
                         <a href="{{ route('home.index') }}">Home</a>
 					<li>
+					
+					{% if auth_user %}
+					
                     <li>
                         <a href="{{ route('visits.index') }}">Visits</a>
                     </li>
+					
+					{% endif %}
+					
+					{% if auth_user %}
+					
+					<li class="d-sm-none text-center">
+                        <a href="{{ route('auth.logout') }}" class="mb-4 header-button">Logout</a>
+                    </li>
+					
+					{% else %}
+					
                     <li class="d-sm-none text-center">
                         <a href="{{ route('auth.login') }}" class="header-button active">Login</a>
                     </li>
                     <li class="d-sm-none text-center">
                         <a href="{{ route('auth.register') }}" class="mb-4 header-button">Register</a>
                     </li>
+					
+					{% endif %}
+					
                 </ul>
                 <div class="header-bar d-lg-none mr-sm-3">
                     <span></span>
@@ -59,24 +70,53 @@
                     <span></span>
                 </div>
                 <div class="header-right">
-                    <a href="sign-in.html" class="header-button d-none d-sm-inline-block m-0 active">Login</a>
-                    <a href="sign-up.html" class="header-button d-none d-sm-inline-block m-0">Register</a>
+				
+					{% if auth_user %}
+				
+					<a href="{{ route('auth.logout') }}" class="header-button d-none d-sm-inline-block m-0">Logout</a>
+				
+					{% else %}
+				
+                    <a href="{{ route('auth.login') }}" class="header-button d-none d-sm-inline-block m-0 active">Login</a>
+                    <a href="{{ route('auth.register') }}" class="header-button d-none d-sm-inline-block m-0">Register</a>
+					
+					{% endif %}
+					
                 </div>
             </div>
         </div>
     </header>
-	
-    <!--============= Header Section Ends Here =============-->
-	
-	{% block header %}{% endblock %}
+		
+	{% if banner %}
 	
 	{% block banner %}{% endblock %}
 	
-    <!--============= Footer Section Starts Here =============-->
-    
+	{% else %}
+		
+    <section class="page-header">
+        <div class="banner-bg bg_img" data-background="/assets/images/banner/banner-bg.jpg">
+            <div class="banner-bg-shape"><img src="/assets/images/banner/banner-shape.png" alt="banner"></div>
+            <div class="round-1">
+                <img src="/assets/images/banner/01.png" alt="banner">
+            </div>
+            <div class="round-2">
+                <img src="/assets/images/banner/02.png" alt="banner">
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="title">{{ title }}</h1>
+            </div>
+        </div>
+    </section>
+		
+	{% endif %}
+	
+	{% block content %}{% endblock %}
+	    
 	<footer class="footer-section padding-top">
-        <div class="footer-bg bg_img" data-background="assets/images/footer/footer-bg.jpg"></div>
-        <div class="footer-bg d-md-block d-none"><img src="assets/images/footer/wave.png" alt="footer"></div>
+        <div class="footer-bg bg_img" data-background="/assets/images/footer/footer-bg.jpg"></div>
+        <div class="footer-bg d-md-block d-none"><img src="/assets/images/footer/wave.png" alt="footer"></div>
         <div class="container">
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <div class="footer-bottom">
@@ -111,8 +151,6 @@
         </div>
     </footer>
 	
-    <!--============= Footer Section Ends Here =============-->
-
     <script src="/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/assets/js/modernizr-3.6.0.min.js"></script>
     <script src="/assets/js/plugins.js"></script>
@@ -128,4 +166,5 @@
     <script src="/assets/js/main.js"></script>
 
 </body>
+
 </html>

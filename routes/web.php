@@ -20,7 +20,7 @@ Route::get('/', function() { return \Redirect::route('home.index'); });
 Route::get('home', ['as' => 'home.index', 'uses' => 'HomeController@index' ]);
 
 // Visits
-Route::get('visits', ['as' => 'visits.index', 'uses' => 'VisitsController@index' ]);
+Route::get('visits', ['as' => 'visits.index', 'uses' => 'VisitsController@index', 'middleware' => ['auth'] ]);
 
 // Authentication
 Route::group(['prefix' => 'auth', 'as' => 'auth.'], function ()
@@ -37,3 +37,19 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.'], function ()
 	Route::get('register', [ 'as' => 'register', 'uses' => 'Auth\RegisterController@index' ]);
 	Route::post('register', [ 'as' => 'register', 'uses' => 'Auth\RegisterController@post' ]);
 });
+
+if (\App::environment('local'))
+{
+	// Templates
+	Route::group(['prefix' => 'templates', 'as' => 'templates.'], function ()
+	{	
+		Route::get('/', function() { return \Redirect::route('templates.index'); });
+		Route::get('blog', [ 'as' => 'blog', 'uses' => 'TemplatesController@blog' ]);
+		Route::get('blog-single', [ 'as' => 'blog-single', 'uses' => 'TemplatesController@blogSingle' ]);
+		Route::get('faq', [ 'as' => 'faq', 'uses' => 'TemplatesController@faq' ]);
+		Route::get('index', [ 'as' => 'index', 'uses' => 'TemplatesController@index' ]);
+		Route::get('payout-rates', [ 'as' => 'payout-rates', 'uses' => 'TemplatesController@payoutRates' ]);
+		Route::get('sign-in', [ 'as' => 'sign-in', 'uses' => 'TemplatesController@signIn' ]);
+		Route::get('sign-up', [ 'as' => 'sign-up', 'uses' => 'TemplatesController@signUp' ]);
+	});
+}

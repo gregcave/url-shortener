@@ -15,7 +15,7 @@ class Url extends Model
      */
 	 
     protected $fillable = [
-		'user_id', 'url', 'slug', 'used'
+		'user_id', 'url', 'link', 'used'
 	];
 
 	/* Relations */

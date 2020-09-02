@@ -1,9 +1,7 @@
 {% extends 'html/layouts/master.twig' %}
 	
 {% block banner %}
-	
-    <!--============= Banner Section Starts Here =============-->
-	
+		
     <section class="banner-section">
         <div class="banner-bg bg_img" data-background="/assets/images/banner/banner-bg.jpg">
             <div class="banner-bg-shape"><img src="/assets/images/banner/banner-shape.png" alt="banner"></div>
@@ -36,7 +34,7 @@
                         <p>Links Shortened</p>
                     </div>
                     <div class="counter-item">
-                        <h2 class="counter-title"><span class="counter">{{ clicks_count }}</span></h2>
+                        <h2 class="counter-title"><span class="counter">{{ visits_count }}</span></h2>
                         <p>Links Clicked</p>
                     </div>
                 </div>
@@ -44,8 +42,6 @@
         </div>
     </section>
 	
-    <!--============= Banner Section Ends Here =============-->
-
 {% endblock %}
 	
 {% block content %}

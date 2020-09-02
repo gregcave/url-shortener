@@ -17,8 +17,8 @@ class CreateUrlsTable extends Migration
             $table->uuid('id')->primary();
 			$table->uuid('user_id')->nullable();
 			$table->string('url')->unique();
-			$table->string('slug')->unique();
-            $table->unsignedInteger('used')->default('0');
+			$table->string('link')->unique();
+            $table->unsignedInteger('visits')->default('0');
 			$table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
