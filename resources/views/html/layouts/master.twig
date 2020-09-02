@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>{{ title }} | URL Shortener</title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/nice-select.css">
+    <link rel="stylesheet" href="/assets/css/owl.min.css">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/flaticon.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <!--============= ScrollToTop Section Starts Here =============-->
+	
+    <div class="overlayer" id="overlayer">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+    <a href="#0" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+    <div class="overlay"></div>
+	
+    <!--============= ScrollToTop Section Ends Here =============-->
+
+    <!--============= Header Section Starts Here =============-->
+	
+    <header class="header-section">
+        <div class="container">
+            <div class="header-wrapper">
+                <ul class="menu">
+                    <li>
+                        <a href="{{ route('home.index') }}">Home</a>
+					<li>
+                    <li>
+                        <a href="{{ route('visits.index') }}">Visits</a>
+                    </li>
+                    <li class="d-sm-none text-center">
+                        <a href="{{ route('auth.login') }}" class="header-button active">Login</a>
+                    </li>
+                    <li class="d-sm-none text-center">
+                        <a href="{{ route('auth.register') }}" class="mb-4 header-button">Register</a>
+                    </li>
+                </ul>
+                <div class="header-bar d-lg-none mr-sm-3">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header-right">
+                    <a href="sign-in.html" class="header-button d-none d-sm-inline-block m-0 active">Login</a>
+                    <a href="sign-up.html" class="header-button d-none d-sm-inline-block m-0">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+	
+    <!--============= Header Section Ends Here =============-->
+	
+	{% block header %}{% endblock %}
+	
+	{% block banner %}{% endblock %}
+	
+    <!--============= Footer Section Starts Here =============-->
+    
+	<footer class="footer-section padding-top">
+        <div class="footer-bg bg_img" data-background="assets/images/footer/footer-bg.jpg"></div>
+        <div class="footer-bg d-md-block d-none"><img src="assets/images/footer/wave.png" alt="footer"></div>
+        <div class="container">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="footer-bottom">
+                <div class="footer-bottom-area">
+                    <div class="left cl-white">
+                        <p>&copy; Copyright 2020 | <a href="/">URL Shortener</a> By Greg Cave</p>
+                    </div>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#0" class="active">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0" class="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0" class="">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0" class="">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+	
+    <!--============= Footer Section Ends Here =============-->
+
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/waypoints.js"></script>
+    <script src="/assets/js/nice-select.js"></script>
+    <script src="/assets/js/counterup.min.js"></script>
+    <script src="/assets/js/owl.min.js"></script>
+    <script src="/assets/js/magnific-popup.min.js"></script>
+    <script src="/assets/js/paroller.js"></script>
+    <script src="/assets/js/contact.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+</body>
+</html>
