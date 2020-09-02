@@ -26,7 +26,7 @@ class LoginController extends Controller
 
     public function post()
 	{
-		 $rules = array(
+		$rules = array(
 			'email' => 'required|exists:users',
             'password' => 'required|min:6'
         );

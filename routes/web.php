@@ -22,6 +22,10 @@ Route::get('home', ['as' => 'home.index', 'uses' => 'HomeController@index' ]);
 // Visits
 Route::get('visits', ['as' => 'visits.index', 'uses' => 'VisitsController@index', 'middleware' => ['auth'] ]);
 
+// URLs
+Route::get('url/{link}', [ 'as' => 'url.index', 'uses' => 'UrlsController@index' ]);
+Route::post('url/create', [ 'as' => 'url.create', 'uses' => 'UrlsController@post' ]);
+
 // Authentication
 Route::group(['prefix' => 'auth', 'as' => 'auth.'], function ()
 {	

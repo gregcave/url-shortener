@@ -20,10 +20,13 @@
             </div>
             <div class="banner-form-group">
                 <h3 class="subtitle">Shortening URLs is Simple:</h3>
-                <form class="banner-form">
+				
+                <form class="banner-form" method="POST" action="http://localhost/url/create" accept-charset="UTF-8" class="form">
+					<input type="hidden" name="_token" value="{{ csrf_token('url.create') }}"/>
                     <input type="text" placeholder="https://example.com" name="url" required>
                     <button type="submit">Shorten <i class="flaticon-startup"></i></button>
                 </form>
+				
                 <div class="banner-counter">
                     <div class="counter-item">
                         <h2 class="counter-title"><span class="counter">{{ users_count }}</span></h2>
