@@ -15,7 +15,7 @@ class CreateUrlsTable extends Migration
     {
         Schema::create('urls', function (Blueprint $table) {
             $table->uuid('id')->primary();
-			$table->uuid('user_id');
+			$table->uuid('user_id')->nullable();
 			$table->string('url')->unique();
 			$table->string('slug')->unique();
             $table->unsignedInteger('used')->default('0');
